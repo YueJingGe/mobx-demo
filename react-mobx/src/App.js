@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 import { Router, Route, hashHistory } from 'react-router';
-import Home from './Pages/Home';
+import TodoList from './Pages/TodoList';
 
 class App extends Component {
   render() {
     return (
       <Router history={hashHistory}>
-        <Route path="/" component={Home} />
+        <Route path="/" component={TodoList} />
       </Router>
     );
   }
