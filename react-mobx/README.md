@@ -75,3 +75,11 @@ length: 1
 __proto__: Array(0)
 __proto__: Object
 ```
+
+### Attempted import error: 'expr' is not exported from 'mobx'.
+
+使用 import expr from 'mobx'; 报错
+
+Expr 是由 mobx-utils 包提供的。
+
+所以正确的应该是：import expr from 'mobx-utils';
