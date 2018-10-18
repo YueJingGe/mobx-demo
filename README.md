@@ -41,6 +41,29 @@ npm i todomvc-common --save
 import 'todomvc-common/base.css';
 import 'todomvc-app-css/index.css';
 ```
+## 按需加载
+
+```js
+import Loadable from 'react-loadable';
+import ReactLoading from 'react-loading';
+
+// loading组件  引用 react-loading
+const LoadingComponent = <ReactLoading type='spokes' color="blue" height={667} width={375} />
+
+const Home = Loadable({
+  loader: () => import(/* webpackChunkName: "Home" */'../components/Home'),
+  loading(){
+    return LoadingComponent
+  } 
+});
+
+const TodoApp = Loadable({
+  loader: () => import(/* webpackChunkName: "TodoApp" */'../components/TodoApp'),
+  loading(){
+    return LoadingComponent
+  } 
+});
+```
 
 # 深入理解mobx
 
