@@ -1,0 +1,10 @@
+.app-container{
+  text-align: center;
+  padding: 20px 10px ;
+}
+
+.app-container a{
+  text-decoration: none;
+  padding: 0 10px;
+  font-size: 14px;
+}
