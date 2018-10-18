@@ -3,15 +3,13 @@ import { uuid } from '../utils';
 import TodoModel from '../models/TodoModel';
 
 class TodoStore {
-  @observable todos = [];
+  @observable todos = []; // 保存todo列表项
 
-  @computed
-  get activeTodoCount() {
+  @computed get activeTodoCount() {
     return this.todos.filter(todo => !todo.completed).length;
   }
 
-  @computed
-  get completedCount() {
+  @computed get completedCount() {
     return this.todos.length - this.activeTodoCount;
   }
 
