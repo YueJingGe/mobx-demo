@@ -21,6 +21,8 @@ class TodoModel {
   }
   // 切换列表项的完成状态
   toggle = () => {
+    console.log(this.completed);
+    
     this.completed = !this.completed;
   }
   // 根据id删除列表项
