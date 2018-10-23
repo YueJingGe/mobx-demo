@@ -1,3 +1,23 @@
+<!-- TOC -->
+
+- [mobx-demo](#mobx-demo)
+- [项目搭建](#项目搭建)
+- [其他集成](#其他集成)
+  - [路由集成](#路由集成)
+  - [使用todomvc样式](#使用todomvc样式)
+  - [按需加载](#按需加载)
+- [深入理解mobx](#深入理解mobx)
+  - [概念](#概念)
+  - [要点](#要点)
+    - [数据模型](#数据模型)
+    - [数据储存](#数据储存)
+  - [API](#api)
+    - [observable](#observable)
+    - [computed](#computed)
+    - [autorun](#autorun)
+
+<!-- /TOC -->
+
 # mobx-demo
 学习mobx
 
@@ -71,6 +91,22 @@ const TodoApp = Loadable({
 
 mobx的数据流实践的核心概念就是数据模型(model)和数据存储(store)。
 
+- 状态 state
+- 衍生 derivations
+  - computed
+  - reactions
+  - autorun
+  - ... 
+- 动作 actions
+
+> 所有的计算值都应该是纯净的。它们不应该用来改变状态。
+
+## 要点
+
+- 定义状态并使其可观察
+- 创建视图以响应状态的变化
+- 更新状态
+
 ### 数据模型
 
 定义数据模型的好处：
@@ -85,3 +121,38 @@ mobx的数据流实践的核心概念就是数据模型(model)和数据存储(st
 也就是说：Store 就是连接我们的 View 层和 Model 层之间的桥梁，即 ViewModel。
 
 model -> (创建实例) -> store  -> (注入渲染) -> view。
+
+## API
+
+### observable
+
+```js
+import { observable } from 'mobx';
+
+class Todo {
+  id = Math.random();
+  @observable title = '';
+  @observable finished = false;
+}
+```
+
+### computed
+
+```js
+import { computed } from 'mobx';
+
+class TodoList {
+  @observabel todos = [];
+  @computed get unfinishedTodoCount() {
+    return this.todos.filter(todo => !todo.finished).length;
+  }
+}
+```
+
+### autorun
+
+```js
+autorun(()=>{
+  console.log("Tasks left: " + todos.unfinishedTodoCount)
+})
+```

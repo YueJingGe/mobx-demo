@@ -1,3 +1,13 @@
+<!-- TOC -->
+
+- [开始](#开始)
+- [FAQ](#faq)
+  - [SyntaxError: /Users/yuejingge/Desktop/lianxi/mobx-demo/react-mobx/src/stores/TodoStore.js: Support for the experimental syntax 'decorators-legacy' isn't currently enabled (4:3):](#syntaxerror-usersyuejinggedesktoplianximobx-demoreact-mobxsrcstorestodostorejs-support-for-the-experimental-syntax-decorators-legacy-isnt-currently-enabled-43)
+  - [打印出来的store不正确](#打印出来的store不正确)
+  - [Attempted import error: 'expr' is not exported from 'mobx'.](#attempted-import-error-expr-is-not-exported-from-mobx)
+
+<!-- /TOC -->
+
 ## 开始
 
 ```bash
